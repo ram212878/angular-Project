@@ -1,11 +1,11 @@
 * {
-  margin:0px;
+  margin: 0px;
   padding: 0px;
   box-sizing: border-box;
 }
 
 .calculator-wrapper {
-  max-width: 400px;
+  max-width: 300px;
   height: fit-content;
   overflow: auto;
   border: 1px solid royalblue;
@@ -17,7 +17,7 @@
 }
 .calculator-content {
   width: 100%;
-  height: fit-content;
+  max-height: 400px;
   margin: 5px auto;
   overflow: auto;
   padding: 2px;
@@ -35,4 +35,16 @@
   margin: auto 0px;
   padding: 2px 5px;
   float: right;
+}
+
+.keys-area {
+  width: fit-content;
+  margin: 1px auto;
+  display: flex;
+  float: left;
+}
+
+.keys-area button {
+  width: 50px;
+  height: 50px;
 }
