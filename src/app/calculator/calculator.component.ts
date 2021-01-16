@@ -36,6 +36,7 @@ export class CalculatorComponent implements OnInit {
 
   text(val) {
     let len = this.value.length;
+    console.warn(len);
     switch (val) {
       case "=":
         this.calculate();
@@ -65,7 +66,7 @@ export class CalculatorComponent implements OnInit {
   }
 
   calculate() {
-    this.result = eval(this.value.toString());
+    this.result = eval(this.value);
     this.value = this.result;
   }
 }
