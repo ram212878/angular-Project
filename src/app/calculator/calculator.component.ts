@@ -12,61 +12,61 @@ export class CalculatorComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
+    this.value = "";
+    this.result = "";
     this.keys = [
-      "-",
-      "+",
-      "/",
-      "*",
       "1",
       "2",
       "3",
+      "-",
       "4",
       "5",
       "6",
+      "+",
       "7",
       "8",
       "9",
-      "0",
+      "*",
       ".",
-      "x",
+      "0",
+      "/",
       "=",
+      "x",
       "C"
     ];
   }
 
   text(val) {
+    // console.warn(val);
+    this.value += val;
     let len = this.value.length;
-    console.warn(len);
-    switch (val) {
-      case "=":
-        this.calculate();
-        break;
-      case "C":
-        this.value = "";
-        this.result = "";
-        break;
-      case "x":
-        this.value = this.value.substr(0, this.value.length - 1);
-        this.result = this.value;
-        break;
-      default:
-        if (len == 1 && this.value == "0" && val == "0") {
-          this.value = "0";
-          this.result = this.value;
-        } else if (len == 1 && val == ".") {
-          this.value += val;
-          this.result = this.value;
-        } else {
-          if (len == 1 && this.value == "0" && val != "0") this.value = val;
-          else this.value += val;
-          this.result = this.value;
-        }
-        break;
+    let lastTerm = this.value.charAt(len - 1);
+    console.log("last term = " + lastTerm);
+    this.result = this.value;
+    console.info("length=" + len);
+    console.log("result = " + this.result);
+    if (
+      (lastTerm == "+" ||
+        lastTerm == "-" ||
+        lastTerm == "*" ||
+        lastTerm == "/") &&
+      (val == "+" || val == "-" || val == "*" || val == "/") &&
+      val != "="
+    ) {
+      this.value = this.value.slice(0, len - 2);
+      this.value += val;
+      this.result = this.value;
     }
+    if (val == "C") {
+      this.value = "";
+      this.result = "";
+    } else if (val == "=") {
+      this.calculate(this.value.slice(0, len - 1));
+    }
+    console.info(this.result);
   }
 
-  calculate() {
-    this.result = eval(this.value);
-    this.value = this.result;
+  calculate(data) {
+    this.result = eval(data);
   }
 }

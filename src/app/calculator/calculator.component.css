@@ -10,9 +10,10 @@
   overflow: auto;
   border: 1px solid royalblue;
   margin: 10px auto;
+  background-color: rgb(40, 63, 83);
 }
 .calculator-wrapper .calculator-title {
-  color: rgb(13, 22, 3);
+  color: rgb(137, 245, 13);
   text-align: center;
 }
 .calculator-content {
@@ -29,6 +30,7 @@
   margin: 0px auto;
   border: 2px solid gray;
   color: indigo;
+  background-color: #fff;
 }
 
 .result-area span {
@@ -38,10 +40,10 @@
 }
 
 .keys-area {
-  width: fit-content;
-  margin: 1px auto;
+  width: max-content;
   display: flex;
   float: left;
+  margin: 2px 10px 2px 10px;
 }
 
 .keys-area button {
