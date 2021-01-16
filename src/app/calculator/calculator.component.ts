@@ -12,7 +12,6 @@ export class CalculatorComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    this.result = "0";
     this.keys = [
       "-",
       "+",
@@ -28,17 +27,45 @@ export class CalculatorComponent implements OnInit {
       "8",
       "9",
       "0",
+      ".",
+      "x",
       "=",
       "C"
     ];
   }
 
   text(val) {
-    this.value += val;
-    this.result = this.value;
+    let len = this.value.length;
+    switch (val) {
+      case "=":
+        this.calculate();
+        break;
+      case "C":
+        this.value = "";
+        this.result = "";
+        break;
+      case "x":
+        this.value = this.value.substr(0, this.value.length - 1);
+        this.result = this.value;
+        break;
+      default:
+        if (len == 1 && this.value == "0" && val == "0") {
+          this.value = "0";
+          this.result = this.value;
+        } else if (len == 1 && val == ".") {
+          this.value += val;
+          this.result = this.value;
+        } else {
+          if (len == 1 && this.value == "0" && val != "0") this.value = val;
+          else this.value += val;
+          this.result = this.value;
+        }
+        break;
+    }
   }
 
   calculate() {
-    this.result = eval(this.result);
+    this.result = eval(this.value.toString());
+    this.value = this.result;
   }
 }
