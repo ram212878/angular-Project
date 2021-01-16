@@ -37,33 +37,10 @@ export class CalculatorComponent implements OnInit {
   }
 
   text(val) {
-    // console.warn(val);
-    this.value += val;
-    let len = this.value.length;
-    let lastTerm = this.value.charAt(len - 1);
-    console.log("last term = " + lastTerm);
-    this.result = this.value;
-    console.info("length=" + len);
-    console.log("result = " + this.result);
-    if (
-      (lastTerm == "+" ||
-        lastTerm == "-" ||
-        lastTerm == "*" ||
-        lastTerm == "/") &&
-      (val == "+" || val == "-" || val == "*" || val == "/") &&
-      val != "="
-    ) {
-      this.value = this.value.slice(0, len - 2);
-      this.value += val;
-      this.result = this.value;
+    let last = this.value.charAt(this.value.length);
+    if (last == "+" || last == "-" || last == "/" || last == "=" || last == "*"){
+
     }
-    if (val == "C") {
-      this.value = "";
-      this.result = "";
-    } else if (val == "=") {
-      this.calculate(this.value.slice(0, len - 1));
-    }
-    console.info(this.result);
   }
 
   calculate(data) {
