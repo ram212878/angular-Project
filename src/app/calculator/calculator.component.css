@@ -44,15 +44,40 @@
   width: max-content;
   display: flex;
   float: left;
-  
+  text-decoration: none;
   margin: 2px 10px 2px 10px;
 }
 
 .keys-area button {
   width: 30px;
+
   height: 30px;
+  font-size: 18px;
   border-radius: 50%;
-  border:none;
-  outline:aquamarine;
-  text-decoration: none;
+  border: none;
+  outline: none;
+}
+
+.keys-area:nth-child(5) .btn {
+  background-color: red;
+  color: white;
+}
+.keys-area:nth-child(9) .btn {
+  background-color: blue;
+  color: yellow;
+}
+
+.keys-area:nth-child(13) .btn {
+  background-color: green;
+  color: black;
+}
+
+.keys-area:nth-child(16) .btn {
+  background-color: hsl(46, 34%, 27%);
+  color: yellowgreen;
+  font-style: bold;
+}
+
+.keys-area:nth-child(18) .btn {
+  background-color: rgb(40, 63, 83);
 }
