@@ -6,7 +6,7 @@
 			<span> {{ result }}</span>
 		</div>
 		<div class="keys-area" *ngFor="let key of keys">
-			<button #btnData value='{{key}}' (click)="text(btnData.value)">{{ key }} </button>
+			<button #btnData class="btn" value='{{key}}' (click)="text(btnData.value)">{{ key }} </button>
 		</div>
 	</div>
 </div>

@@ -5,13 +5,13 @@
 }
 
 .calculator-wrapper {
-  max-width: 300px;
+  max-width: 210px;
   height: fit-content;
   overflow: auto;
   border: 1px solid royalblue;
   margin: 10px auto;
   background-color: rgb(40, 63, 83);
-   box-shadow: 3px 2px 5px 0px rgba(184, 255, 119, 0.75);
+  box-shadow: 3px 2px 22px 0px rgba(255, 90, 119, 1);
 }
 .calculator-wrapper .calculator-title {
   color: rgb(137, 245, 13);
@@ -23,7 +23,6 @@
   margin: 5px auto;
   overflow: auto;
   padding: 2px;
-  
 }
 
 .calculator-content .result-area {
@@ -45,18 +44,15 @@
   width: max-content;
   display: flex;
   float: left;
+  
   margin: 2px 10px 2px 10px;
-  box-shadow: 3px 2px 5px 0px rgba(184, 255, 119, 0.75);
 }
 
 .keys-area button {
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
-  outline: none;
+  border:none;
+  outline:aquamarine;
   text-decoration: none;
-}
-.keys-area button:nth-child(4) {
-  background-color: green;
-  color: blueviolet;
 }
