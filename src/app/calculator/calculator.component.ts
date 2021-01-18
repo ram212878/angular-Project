@@ -15,31 +15,37 @@ export class CalculatorComponent implements OnInit {
     this.value = "";
     this.result = "";
     this.keys = [
-      "1",
-      "2",
-      "3",
-      "-",
-      "4",
-      "5",
-      "6",
-      "+",
       "7",
       "8",
       "9",
+      "+",
+      "4",
+      "5",
+      "6",
+      "-",
+      "1",
+      "2",
+      "3",
       "*",
       ".",
       "0",
-      "/",
       "=",
-      "x",
-      "C"
+      "/",
+      "",
+      "C",
+      "x"
     ];
   }
 
   text(val) {
     let last = this.value.charAt(this.value.length);
-    if (last == "+" || last == "-" || last == "/" || last == "=" || last == "*"){
-
+    if (
+      last == "+" ||
+      last == "-" ||
+      last == "/" ||
+      last == "=" ||
+      last == "*"
+    ) {
     }
   }
 
