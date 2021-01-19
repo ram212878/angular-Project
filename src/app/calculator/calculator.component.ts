@@ -40,7 +40,8 @@ export class CalculatorComponent implements OnInit {
   }
 
   text(val) {
-    let last = this.value.charAt(this.value.length - 1);
+    let last = "";
+    if (this.value.length > 0) last = this.value.charAt(this.value.length - 1);
 
     if (val == "=") {
       this.calculate();
@@ -49,16 +50,14 @@ export class CalculatorComponent implements OnInit {
       this.result = "";
       this.history = "";
     } else if (val == "x") {
-      if (this.value.length > 0) {
-        this.value = this.value.slice(0, -1);
-        this.result = this.value;
+      if (this.result.length > 0) {
+        this.result = this.result.slice(0, -1);
       }
     } else if (
       (last == "+" || last == "-" || last == "/" || last == "*") &&
       (val == "+" || val == "-" || val == "/" || val == "*")
     ) {
-      this.value = this.value.slice(0, -1) + val;
-      this.result = this.value;
+      this.result = this.result.slice(0, -1) + val;
     } else {
       this.value += val;
       this.result = this.value;
@@ -66,7 +65,11 @@ export class CalculatorComponent implements OnInit {
   }
 
   calculate() {
-    this.result = eval(this.value);
-    // this.history = this.value;
+    let answer = eval(this.value.toString());
+    this.result = answer;
+    this.history = this.value;
+    this.value = this.result;
+
+    console.warn(this.value);
   }
 }

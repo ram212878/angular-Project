@@ -4,7 +4,7 @@
 	<div class="calculator-content">
 		<div class="result-area">
 			<div class="history"> {{history}} </div>
-			<div class="history"> {{result}} </div>
+			<div class="result"> {{result}} </div>
 		</div>
 		<div class="keys-area">
 			<button  *ngFor="let key of keys" #btnData class="btn" value='{{key}}' (click)="text(btnData.value)">{{ key }} </button>

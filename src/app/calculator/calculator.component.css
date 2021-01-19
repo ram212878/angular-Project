@@ -109,3 +109,11 @@
   color: white;
   background-color: rgb(206, 3, 241);
 }
+
+.history {
+  justify-content: right;
+}
+
+.result {
+  justify-content: right;
+}
