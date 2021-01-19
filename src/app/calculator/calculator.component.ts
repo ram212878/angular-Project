@@ -8,6 +8,7 @@ import { Component, OnInit } from "@angular/core";
 export class CalculatorComponent implements OnInit {
   result = "";
   value = "";
+  history = "";
   keys = [];
   constructor() {}
 
@@ -32,25 +33,37 @@ export class CalculatorComponent implements OnInit {
       "=",
       "/",
       "",
-  
+
       "C",
       "x"
     ];
   }
 
   text(val) {
-    let last = this.value.charAt(this.value.length);
-    if (
-      last == "+" ||
-      last == "-" ||
-      last == "/" ||
-      last == "=" ||
-      last == "*"
+    let last = this.value.charAt(this.value.length - 1);
+    if (val == "=") {
+      this.calculate();
+    } else if (val == "C") {
+      this.value = "";
+      this.result = "";
+    } else if (val == "x") {
+      this.value = this.value.slice(0, -1);
+      this.result = this.value;
+    } else if (
+      (last == "+" || last == "-" || last == "/" || last == "*") &&
+      (val == "+" || val == "-" || val == "/" || val == "*")
     ) {
+      this.value = this.value.slice(0, -1) + val;
+      this.result = this.value;
+    } else {
+      this.value += val;
+      this.result = this.value;
     }
   }
 
-  calculate(data) {
-    this.result = eval(data);
+  calculate() {
+    this.result = eval(this.value);
+    this.history = this.value;
+    this.value = this.result;
   }
 }
