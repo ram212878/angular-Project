@@ -32,6 +32,7 @@ export class CalculatorComponent implements OnInit {
       "=",
       "/",
       "",
+  
       "C",
       "x"
     ];

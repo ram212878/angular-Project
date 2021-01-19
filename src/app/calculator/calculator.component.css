@@ -5,7 +5,7 @@
 }
 
 .calculator-wrapper {
-  max-width: 210px;
+  max-width: max-content;
   height: fit-content;
   overflow: auto;
   border: 1px solid royalblue;
@@ -18,7 +18,7 @@
   text-align: center;
 }
 .calculator-content {
-  width: 100%;
+  width: max-content;
   max-height: 400px;
   margin: 5px auto;
   overflow: auto;
@@ -42,47 +42,68 @@
 
 .keys-area {
   width: max-content;
-  display: flex;
-  float: left;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
   text-decoration: none;
-  margin: 10px 10px 2px 10px;
+  margin: 2px auto;
+  padding: 2px;
 }
 
 .keys-area button {
-  width: 30px;
-
-  height: 30px;
-  font-size: 18px;
-  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  padding: 2px;
+  font-size: 20px;
+  margin: 3px 3px;
   border: none;
   outline: none;
+  border-radius: 50%;
+  text-decoration: none;
+}
+.btn:nth-child(n) {
+  background-color: aliceblue;
+  text-align: center;
+  font-family: fantasy;
+}
+.btn:nth-child(n):hover {
+  font-size: 25px;
+  margin: auto auto;
 }
 
-.keys-area:nth-child(5) .btn {
-  background-color: red;
+.btn:nth-child(4) {
   color: white;
-}
-.keys-area:nth-child(9) .btn {
-  background-color: blue;
-  color: yellow;
+  background-color: rgb(199, 85, 20);
 }
 
-.keys-area:nth-child(13) .btn {
-  background-color: green;
-  color: black;
+.btn:nth-child(8) {
+  color: white;
+  background-color: rgb(22, 137, 42);
+}
+.btn:nth-child(12) {
+  color: white;
+  background-color: rgb(160, 9, 157);
 }
 
-.keys-area:nth-child(16) .btn {
-  background-color: hsl(46, 34%, 27%);
-  color: yellowgreen;
-  font-style: bold;
+.btn:nth-child(16) {
+  color: white;
+  background-color: rgb(7, 126, 126);
 }
 
-.keys-area:nth-child(18) .btn {
+.btn:nth-child(15) {
+  color: white;
+  background-color: rgb(251, 0, 0);
+}
+
+.btn:nth-child(17) {
+  color: white;
   background-color: rgb(40, 63, 83);
 }
 
-.btn:hover {
-  text-decoration: none;
+.btn:nth-child(18) {
   color: white;
+  background-color: rgb(15, 24, 144);
+}
+.btn:nth-child(19) {
+  color: white;
+  background-color: rgb(206, 3, 241);
 }
