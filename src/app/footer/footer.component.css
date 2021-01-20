@@ -8,10 +8,8 @@
 }
 
 #footer-content {
-  position: fixed;
-  bottom: 0%;
   width: 100%;
-  height: fit-content;
+  max-height: fit-content;
   background-color: rgb(26, 25, 25);
 }
 

@@ -5,6 +5,8 @@
 }
 
 .calculator-wrapper {
+  border-radius: 5%;
+  outline: none;
   max-width: max-content;
   height: fit-content;
   border: 1px solid rgb(7, 22, 66);
@@ -28,6 +30,7 @@
   max-width: 210px;
   height: 40px;
   overflow: auto;
+  border-radius: 5%;
   margin: 0px auto;
   border: 2px solid rgb(37, 221, 129);
   color: rgb(0, 0, 0);
