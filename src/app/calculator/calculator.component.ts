@@ -6,15 +6,18 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./calculator.component.css"]
 })
 export class CalculatorComponent implements OnInit {
+  previous = "";
   result = "";
-  value = "";
+  current = "";
   history = "";
   keys = [];
   constructor() {}
 
   ngOnInit() {
-    this.value = "";
+    this.previous = "";
     this.result = "";
+    this.current = "";
+    this.history = "";
     this.keys = [
       "7",
       "8",
@@ -35,41 +38,50 @@ export class CalculatorComponent implements OnInit {
       "",
 
       "C",
-      "x"
+      "X"
     ];
   }
 
   text(val) {
-    let last = "";
-    if (this.value.length > 0) last = this.value.charAt(this.value.length - 1);
-
-    if (val == "=") {
-      this.calculate();
-    } else if (val == "C") {
-      this.value = "";
-      this.result = "";
-      this.history = "";
-    } else if (val == "x") {
-      if (this.result.length > 0) {
-        this.result = this.result.slice(0, -1);
-      }
-    } else if (
-      (last == "+" || last == "-" || last == "/" || last == "*") &&
-      (val == "+" || val == "-" || val == "/" || val == "*")
-    ) {
-      this.result = this.result.slice(0, -1) + val;
-    } else {
-      this.value += val;
-      this.result = this.value;
+    switch (val) {
+      case "C":
+        this.result = "";
+        this.current = "";
+        this.previous = "";
+        console.log("data cleared");
+        break;
+      case "=":
+        let last;
+        if (this.current.length > 0) {
+          last = this.current.charAt(this.current.length - 1);
+          if (!(last == "+" || last == "-" || last == "/" || last == "*")) {
+            this.solve(this.current);
+            this.previous = this.previous + "+ ( " + this.current + " )";
+          }
+        } else {
+          console.log("please enter proper statement");
+        }
+        break;
+      case "X":
+        if (this.result.length > 0) {
+          this.result = this.result.slice(0, -1);
+          this.current = this.result;
+        } else {
+          if (this.previous.length == 0 && this.result.length == 0)
+            console.warn("nothing to delete");
+          this.result = this.previous;
+          this.previous = "";
+        }
+        break;
+      case "+" || "-" || "/" || "*":
+        last = this.current.charAt(this.current.length - 1);
+        if (last == "+" || last == "-" || last == "/" || last == "*")
+          this.current = this.current.slice(0, -1);
+        this.result = this.current;
+        break;
     }
   }
-
-  calculate() {
-    let answer = eval(this.value.toString());
-    this.result = answer;
-    this.history = this.value;
-    this.value = this.result;
-
-    console.warn(this.value);
+  solve(value) {
+    this.result = eval(value);
   }
 }
