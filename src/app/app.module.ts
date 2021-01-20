@@ -8,11 +8,10 @@ import { CalculatorComponent } from './calculator/calculator.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ColorchangerComponent } from './colorchanger/colorchanger.component';
-import { ImagePlaygroundComponent } from './image-playground/image-playground.component';
 
 @NgModule({
   imports: [BrowserModule, FormsModule],
-  declarations: [AppComponent, HelloComponent, CalculatorComponent, HeaderComponent, FooterComponent, ColorchangerComponent, ImagePlaygroundComponent],
+  declarations: [AppComponent, HelloComponent, CalculatorComponent, HeaderComponent, FooterComponent, ColorchangerComponent,],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
