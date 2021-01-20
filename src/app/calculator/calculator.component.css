@@ -5,9 +5,8 @@
 }
 
 .calculator-wrapper {
-  max-width: max-content;
+  max-width: 250px;
   height: fit-content;
-  overflow: auto;
   border: 1px solid royalblue;
   margin: 10px auto;
   background-color: rgb(40, 63, 83);
@@ -18,7 +17,7 @@
   text-align: center;
 }
 .calculator-content {
-  width: max-content;
+  width: 250px;
   max-height: 400px;
   margin: 5px auto;
   overflow: auto;
@@ -26,18 +25,20 @@
 }
 
 .calculator-content .result-area {
-  width: 100%;
+  max-width: 250px;
   height: 50px;
   margin: 0px auto;
   border: 2px solid gray;
   color: indigo;
   background-color: #fff;
 }
-.result-area h5 {
-  float: right;
-  font-size: 14px;
+.history {
+  height: 30px;
+  overflow: auto;
+  font-size: 10px;
 }
-.result-area h3 {
+.result-area .result {
+  display: block;
   float: right;
   font-size: 14px;
 }
@@ -56,7 +57,7 @@
   height: 40px;
   padding: 2px;
   font-size: 20px;
-  margin: 3px 3px;
+  margin: 4px 4px;
   border: none;
   outline: none;
   border-radius: 50%;
@@ -96,24 +97,15 @@
   background-color: rgb(251, 0, 0);
 }
 
-.btn:nth-child(17) {
-  color: white;
-  background-color: rgb(40, 63, 83);
-}
-
 .btn:nth-child(18) {
   color: white;
   background-color: rgb(15, 24, 144);
 }
-.btn:nth-child(19) {
+.btn:nth-child(20) {
   color: white;
   background-color: rgb(206, 3, 241);
 }
 
 .history {
-  justify-content: right;
-}
-
-.result {
   justify-content: right;
 }
