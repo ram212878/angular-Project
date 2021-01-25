@@ -3,6 +3,15 @@
   padding: 0;
   box-sizing: border-box;
 }
+.logo {
+  max-width: 150px;
+  max-height: 80px;
+}
+
+.logo img {
+  max-width: 100px;
+  max-height: 80px;
+}
 #header-content {
   position: relative;
   display: grid;
