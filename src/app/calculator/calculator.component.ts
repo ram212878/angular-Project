@@ -9,6 +9,7 @@ export class CalculatorComponent implements OnInit {
   // public previous = "";
   public result = "";
   public current = "";
+  clickBtnColor: String = "";
   previous = "";
   keys = [
     "7",
@@ -37,6 +38,7 @@ export class CalculatorComponent implements OnInit {
   ngOnInit() {}
 
   text(val) {
+    this.clickBtnColor = "red";
     // this.current = this.result;
     let last = "";
 

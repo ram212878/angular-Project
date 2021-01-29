@@ -1,13 +1,13 @@
 <div class="calculator-wrapper">
-  <h4 class="calculator-title">A Simple Calculator</h4>
-  <hr />
-  <div class="calculator-content">
-    <div class="result-area">
-      <!-- <div class="history">{{previous}}</div> -->
-      <div class="result">{{result}}</div>
-    </div>
-    <div class="keys-area">
-      <button
+	<h4 class="calculator-title">A Simple Calculator</h4>
+	<hr />
+	<div class="calculator-content">
+		<div class="result-area">
+			<!-- <div class="history">{{previous}}</div> -->
+			<div class="result">{{result}}</div>
+		</div>
+		<div class="keys-area">
+			<button
         *ngFor="let key of keys"
         #btnData
         class="btn"
@@ -16,6 +16,6 @@
       >
         {{ key }}
       </button>
-    </div>
-  </div>
+		</div>
+	</div>
 </div>
