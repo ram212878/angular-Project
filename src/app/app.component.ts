@@ -8,6 +8,16 @@ import { Component, Output, EventEmitter, VERSION } from "@angular/core";
 export class AppComponent {
   name = "Geeks";
   background = "";
+  componentBtn = [
+    "backgound-changer-component",
+    "calculator-component",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7"
+  ];
 
   parentColorChanger(val) {
     this.background = val;
