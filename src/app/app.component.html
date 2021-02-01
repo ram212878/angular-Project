@@ -3,16 +3,16 @@
 	<app-header></app-header>
 
 	<div class="component-btn-wrapper">
-		<select name="" id="" (change)="enableComponent($event)">
-      <option *ngFor="let item of componentBtn" value="{{ item }}">{{ item }}</option>
+		<select name="" id="" (change)="enableComponent($event.target)">
+      <option *ngFor="let item of componentBtn" value="{{ item.componentName}}">{{ item.name }}</option>
     </select>
 		<div [ngSwitch]="selectedComponent">
 			<!--  -->
-			<div *ngSwitchCase="'background color'">
+			<div *ngSwitchCase="'colorchanger-component'">
 				<app-colorchanger (childData)="parentColorChanger($event)"></app-colorchanger>
 			</div>
 
-			<div *ngSwitchCase="'Calculator'">
+			<div *ngSwitchCase="'calculator-component'">
 				<app-calculator></app-calculator>
 			</div>
 			<div *ngSwitchDefault>
@@ -24,5 +24,6 @@
 
 
 	</div>
-	<app-footer></app-footer>
+
 </div>
+<app-footer></app-footer>

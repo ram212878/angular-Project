@@ -10,21 +10,24 @@ export class AppComponent {
   background = "";
   selectedComponent = "";
   componentBtn = [
-    "--none--",
-    "background color",
-    "Calculator",
-    "2",
-    "3",
-    "4",
-    "5",
-    "6",
-    "7"
+    {
+      componentName: "none",
+      name: "--none--"
+    },
+    {
+      componentName: "colorchanger-component",
+      name: "background color"
+    },
+    {
+      componentName: "calculator-component",
+      name: "calculator"
+    }
   ];
 
   parentColorChanger(val) {
     this.background = val;
   }
   enableComponent(event) {
-    this.selectedComponent = event.target.value;
+    this.selectedComponent = event.value;
   }
 }
