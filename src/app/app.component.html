@@ -3,7 +3,7 @@
 	<app-header></app-header>
 
 	<div class="component-btn-wrapper">
-		<select name="" id="" (change)="enableComponent($event.target)">
+		<select name="" id="select-box" (change)="enableComponent($event.target)">
       <option *ngFor="let item of componentBtn" value="{{ item.componentName}}">{{ item.name }}</option>
     </select>
 		<div [ngSwitch]="selectedComponent">
