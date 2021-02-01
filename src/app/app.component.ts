@@ -9,8 +9,9 @@ export class AppComponent {
   name = "Geeks";
   background = "";
   componentBtn = [
-    "backgound-changer-component",
-    "calculator-component",
+    "--none--",
+    "backgorund color",
+    "Calculator",
     "2",
     "3",
     "4",

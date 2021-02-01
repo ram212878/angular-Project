@@ -3,6 +3,9 @@
   <app-header></app-header>
   <app-colorchanger (childData)="parentColorChanger($event)"></app-colorchanger>
   <div class="component-btn-wrapper">
+    <select name="" id="">
+      <option *ngFor="let item of componentBtn" value="{{ item }}">{{ item }}</option>
+    </select>
     <div>
 <app-calculator></app-calculator>
     </div>
