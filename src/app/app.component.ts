@@ -8,9 +8,10 @@ import { Component, Output, EventEmitter, VERSION } from "@angular/core";
 export class AppComponent {
   name = "Geeks";
   background = "";
+  selectedComponent = "";
   componentBtn = [
     "--none--",
-    "backgorund color",
+    "background color",
     "Calculator",
     "2",
     "3",
@@ -22,5 +23,8 @@ export class AppComponent {
 
   parentColorChanger(val) {
     this.background = val;
+  }
+  enableComponent(event) {
+    this.selectedComponent = event.target.value;
   }
 }

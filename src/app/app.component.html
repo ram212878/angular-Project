@@ -1,16 +1,28 @@
 <div class="page-wrapper" [style.backgroundColor]="background">
-  <h1></h1>
-  <app-header></app-header>
-  <app-colorchanger (childData)="parentColorChanger($event)"></app-colorchanger>
-  <div class="component-btn-wrapper">
-    <select name="" id="">
+	<h1></h1>
+	<app-header></app-header>
+
+	<div class="component-btn-wrapper">
+		<select name="" id="" (change)="enableComponent($event)">
       <option *ngFor="let item of componentBtn" value="{{ item }}">{{ item }}</option>
     </select>
-    <div>
-<app-calculator></app-calculator>
-    </div>
+		<div [ngSwitch]="selectedComponent">
+			<!--  -->
+			<div *ngSwitchCase="'background color'">
+				<app-colorchanger (childData)="parentColorChanger($event)"></app-colorchanger>
+			</div>
 
-    
-  </div>
-  <app-footer></app-footer>
+			<div *ngSwitchCase="'Calculator'">
+				<app-calculator></app-calculator>
+			</div>
+			<div *ngSwitchDefault>
+				<h4> Select an option to view </h4>
+			</div>
+
+
+		</div>
+
+
+	</div>
+	<app-footer></app-footer>
 </div>
